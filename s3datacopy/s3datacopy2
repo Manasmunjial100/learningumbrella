@@ -1,0 +1,42 @@
+aws s3 sync /home/ec2-user/cloudtrail/ s3://aws-controltower-logs-599544270878-ap-south-1/o-c36hh3n2nm/AWSLogs/030636184844/CloudTrail/ap-south-1/2021/
+ aws-controltower-logs-599544270878-ap-south-1
+
+
+
+Download from S3
+aws s3 cp s3://aws-controltower-logs-463812145151-ap-south-1/o-uoyyfkkahe/AWSLogs/030636184844/CloudTrail/ap-south-1/2021/ /root/trail/ --recursive
+
+
+
+Copy TO EC2
+scp -i newec2keypair.pem -r trail ec2-user@ec2-13-235-91-104.ap-south-1.compute.amazonaws.com:
+
+
+
+
+aws s3 sync /home/ec2-user/cloudtrail/ s3://aws-controltower-logs-599544270878-ap-south-1/o-c36hh3n2nm/AWSLogs/030636184844/CloudTrail/ap-south-1/2021/
+
+
+aws s3 cp s3://aws-controltower-logs-463812145151-ap-south-1/o-uoyyfkkahe/AWSLogs/030636184844/CloudTrail/ap-south-1/2021/ /root/traildir/ --recursive
+s3://rapipay-vpc-flow-logs-463812145151-ap-south-1/AWSLogs/
+
+
+
+
+
+Profiles
+
+
+aws configure list-profiles
+
+
+https://www.thegeekstuff.com/2019/03/aws-configure-examples/
+
+export AWS_PROFILE=sample
+
+export AWS_PROFILE=default
+s3://rapipay-elb-logs-599544270878-ap-south-1/Uat-Elb-Logs/
+aws s3 sync /home/ec2-user/uatelb s3://rapipay-elb-logs-599544270878-ap-south-1/Uat-Elb-Logs/
+
+
+

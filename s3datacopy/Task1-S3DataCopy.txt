@@ -1,0 +1,58 @@
+Copy File to EC2 Using SCP
+
+
+
+
+chmod 400 flask.pem
+ssh -i flask.pem ec2-user@public-dns
+
+(To copy file in this example lets copy file temp.txt)
+
+scp -i flask.pem temp.txt ec2-user@public-dns:
+(This will copy in home directory)
+
+
+
+If we want to copy to a particular directory then
+scp -i flask.pem temp.txt ec2-user@public-dns:sample/
+(Here sample is the directory inside our EC2 Instance)
+
+
+
+(To copy the directory use -r flag)
+scp -i flask.pem -r sample ec2-user@public-dns:
+(Sample is directory name)
+
+
+
+Using CLI to download an entire S3 Bucket data
+
+aws s3 cp s3://bucket/folder/file.txt .                      (To download a file)
+
+aws s3 cp s3://Bucket/Folder LocalFolder --recursive          (To download a particular folder)
+
+aws s3 sync s3://YOUR_BUCKET .                              (To download a entire bucket)
+
+
+SYNC EC2 With S3
+
+aws s3 sync /root/environment s3://samplebucketmanas    (Here environment is the directory)
+
+
+
+
+
+User in old account Programmatic access                samplekey1.pem
+AKIAWX7K3V772MVUCV66          access key
+tTf3f2iOh1fV/VCkLgDgF8WEG3s8HOS7aNjL7kSv         secret access key 
+
+
+user in new account Programmatic access s3fullaccess             newec2keypair
+
+acess key         AKIAYXF47SAPLHJZXFNB
+secrete access key      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
+
+
+
+aws s3 sync /home/ec2-user/cloudtraildigest/ s3://aws-controltower-logs-599544270878-ap-south-1/o-c36hh3n2nm/AWSLogs/030636184844/CloudTrail-Digest/ap-south-1/2021/
+
